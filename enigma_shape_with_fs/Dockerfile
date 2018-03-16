@@ -10,7 +10,8 @@ ENV https_proxy=https://$user:$pass@proxyapp.unal.edu.co:8080/
 ENV ftp_proxy=https://$user:$pass@proxyapp.unal.edu.co:8080/
 
 # Update container
-RUN apt-get update
+RUN apt-get update && \
+	apt-get install perl
 
 # Expose port (BTW)
 EXPOSE 80
