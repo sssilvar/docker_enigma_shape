@@ -17,4 +17,4 @@ docker run -it \
 	-v /home/sssilvar/Documents/:/group \
 	-v /home/sssilvar/Documets/dataset/:/input \
 	-v /home/sssilvar/Documets/output:/output \
-	sssilvar/eshape_fs /group/groupfile.csv /input /output
+	sssilvar/eshape_fs:1.0 /group/groupfile.csv /input /output
