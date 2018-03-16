@@ -14,3 +14,6 @@ EXPOSE 80
 
 # Create an input and an output folders
 RUN mkdir /input && mkdir /output
+
+# Copy license to container
+COPY license /opt/freesurfer/.license
