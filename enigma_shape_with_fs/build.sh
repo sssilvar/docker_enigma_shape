@@ -1,3 +1,3 @@
 docker build -t sssilvar/eshape_fs \
-	--build-arg user=[USER] \
-	--build-arg pass=[PASS] \
+	--build-arg proxy=[http://user:pass@proxy_server.com:port/]\
+	$(pwd)
