@@ -27,3 +27,4 @@ ADD enigma_shape /usr/local/enigma_shape
 RUN chmod +x -R /usr/local/enigma_shape
 ENV ENIGMA_SHAPE_DIR=/usr/local/enigma_shape/
 ENV FS=/opt/freesurfer/
+ENTRYPOINT ["/usr/local/enigma_shape/shape_group_run.sh"]
