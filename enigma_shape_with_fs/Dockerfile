@@ -25,3 +25,4 @@ COPY license /opt/freesurfer/.license
 ADD enigma_shape /usr/local/enigma_shape
 RUN chmod +x -R /usr/local/enigma_shape
 ENV SHAPE_GROUP_RUN=/usr/local/enigma_shape/shape_group_run.sh
+ENV FS=/opt/freesurfer/
