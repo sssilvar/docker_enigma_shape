@@ -1,3 +1,15 @@
+# Create a base docker container that will execute the ENIGMA Shape analysis and
+# put the results in the /output foder
+#
+# Example usage:
+#   docker run --rm -ti \
+#       -v </groupfile/directory>:/group \
+#       -v </input/directory>:/input \
+#       -v </output/directory>:/output \
+#       sssilvar/eshape_fs /group/groupfile.csv /input /output
+#
+
+
 FROM freesurfer/freesurfer:6.0
 MAINTAINER Santiago Smith <sssilvar@unal.edu.co>
 
@@ -17,7 +29,7 @@ RUN apt-get -y update && \
 EXPOSE 80
 
 # Create an input and an output folders
-RUN mkdir /input && mkdir /output
+RUN mkdir /input && mkdir /output && mkdir /group
 
 # Copy license to container
 COPY license /opt/freesurfer/.license
