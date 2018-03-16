@@ -1,14 +1,16 @@
 FROM freesurfer/freesurfer:6.0
 MAINTAINER Santiago Smith <sssilvar@unal.edu.co>
 
+# Set proxy (if necessary)
+ENV http_proxy=http://aieun:3173831565@proxyapp.unal.edu.co:8080/
+ENV https_proxy=https://aieun:3173831565@proxyapp.unal.edu.co:8080/
+ENV ftp_proxy=https://aieun:3173831565@proxyapp.unal.edu.co:8080/
+
 # Update container
-RUN yum -y --setopt=tsflags=nodocs update && \
-    yum -y --setopt=tsflags=nodocs install httpd && \
-    yum clean all
+RUN apt-get update
 
 # Expose port (BTW)
 EXPOSE 80
 
 # Create an input and an output folders
-VOLUME /input
-VOLUME /output
+RUN mkdir /input && mkdir /output
