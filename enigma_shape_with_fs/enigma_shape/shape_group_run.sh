@@ -26,7 +26,7 @@ FS_binary=${FS}bin/
 
 ## directory where you've downloaded and stored all the shape stuff, containing MedialDemonsShared folder
 #----modify-this----  
-runDirectory=$(pwd)
+runDirectory=${ENIGMA_SHAPE_DIR}
 #runDirectory=/ifshome/bgutman/
 
 
