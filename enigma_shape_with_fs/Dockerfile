@@ -15,8 +15,10 @@ MAINTAINER Santiago Smith <sssilvar@unal.edu.co>
 
 # Set proxy (if necessary) --build-arg
 ARG proxy
-
 ENV http_proxy=$proxy
+
+# Prevent dpkg errors
+ENV TERM=xterm-256color
 
 # Update container
 RUN apt-get -y update && \
