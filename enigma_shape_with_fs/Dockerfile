@@ -2,9 +2,12 @@ FROM freesurfer/freesurfer:6.0
 MAINTAINER Santiago Smith <sssilvar@unal.edu.co>
 
 # Set proxy (if necessary)
-ENV http_proxy=http://aieun:3173831565@proxyapp.unal.edu.co:8080/
-ENV https_proxy=https://aieun:3173831565@proxyapp.unal.edu.co:8080/
-ENV ftp_proxy=https://aieun:3173831565@proxyapp.unal.edu.co:8080/
+ARG user=aieun
+ARG pass=3173831565
+
+ENV http_proxy=http://user:pass@proxyapp.unal.edu.co:8080/
+ENV https_proxy=https://user:pass@proxyapp.unal.edu.co:8080/
+ENV ftp_proxy=https://user:pass@proxyapp.unal.edu.co:8080/
 
 # Update container
 RUN apt-get update
